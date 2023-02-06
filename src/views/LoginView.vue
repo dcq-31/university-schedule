@@ -18,13 +18,13 @@ const toggleShowPassword = () => {
 </script>
 <template>
   <div class="h-full p-2 flex items-center">
-    <main class="mx-auto p-5 w-full max-w-sm">
+    <main class="mx-auto p-5 w-full max-w-sm sm:border border-zinc-500">
       <div>
         <img src="/login-bg.svg" alt="login-bg" class="max-h-52 mx-auto" />
       </div>
 
       <div class="mt-5">
-        <div class="text-xl font-semibold text-slate-700">Inicia Sesión</div>
+        <div class="text-2xl font-semibold text-slate-700">Inicia Sesión</div>
 
         <form class="space-y-5 mt-5">
           <div class="flex items-center">
