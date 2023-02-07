@@ -4,20 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "carrot-orange": {
-          DEFAULT: "#e79823",
-          50: "#fdf5e9",
-          100: "#f8e0bd",
-          200: "#f5d6a7",
-          300: "#f1c17b",
-          400: "#eeb765",
-          500: "#e9a239",
-          600: "#d08920",
-          700: "#a26a19",
-          800: "#744c12",
-          900: "#452e0a",
-        },
-        "brandeis-blue": {
+        primary: {
           DEFAULT: "#0f61ed",
           50: "#e7effd",
           100: "#cfdffb",
@@ -29,6 +16,19 @@ module.exports = {
           700: "#0b44a6",
           800: "#093a8e",
           900: "#041d47",
+        },
+        secondary: {
+          DEFAULT: "#e79823",
+          50: "#fdf5e9",
+          100: "#f8e0bd",
+          200: "#f5d6a7",
+          300: "#f1c17b",
+          400: "#eeb765",
+          500: "#e9a239",
+          600: "#d08920",
+          700: "#a26a19",
+          800: "#744c12",
+          900: "#452e0a",
         },
       },
     },

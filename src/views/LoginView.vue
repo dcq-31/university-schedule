@@ -17,59 +17,63 @@ const toggleShowPassword = () => {
 };
 </script>
 <template>
-  <div class="h-full p-2 flex items-center">
-    <main class="mx-auto p-5 w-full max-w-sm sm:border border-zinc-500">
+  <div class="flex min-h-full items-center justify-center p-2">
+    <main class="w-full min-w-max max-w-md p-5">
       <div>
-        <img src="/login-bg.svg" alt="login-bg" class="max-h-52 mx-auto" />
+        <img
+          src="/login-bg.svg"
+          alt="Teacher adding tasks"
+          class="mx-auto h-52 sm:h-56"
+        />
       </div>
 
       <div class="mt-5">
         <div class="text-2xl font-semibold text-slate-700">Inicia Sesión</div>
 
-        <form class="space-y-5 mt-5">
+        <form class="mt-5 space-y-5">
           <div class="flex items-center">
             <div class="mr-2">
-              <UserIcon class="text-slate-500 h-5 w-5" />
+              <UserIcon class="h-5 w-5 text-slate-500" />
             </div>
             <input
               type="text"
               placeholder="Usuario"
-              class="w-full max-w-sm px-3 py-2 text-slate-700 bg-slate-50 border-b border-slate-300 rounded-t-md text-sm placeholder-slate-500 placeholder:text-sm focus:outline-none focus:border-brandeis-blue-400"
+              class="form-input w-full"
             />
           </div>
 
-          <div class="flex items-center relative">
+          <div class="relative flex items-center">
             <div class="mr-2">
-              <KeyIcon class="text-slate-500 h-5 w-5" />
+              <KeyIcon class="h-5 w-5 text-slate-500" />
             </div>
             <input
               :type="passwordType"
               placeholder="Constraseña"
-              class="w-full max-w-sm px-3 py-2 text-slate-700 bg-slate-50 border-b border-slate-300 rounded-t-md text-sm placeholder-slate-500 placeholder:text-sm focus:outline-none focus:border-brandeis-blue-400"
+              class="form-input w-full"
             />
             <EyeIcon
               v-if="showPassword"
-              class="text-slate-500 h-5 w-5 absolute right-0 mr-2 cursor-pointer"
+              class="absolute right-0 mr-2 h-5 w-5 cursor-pointer text-slate-500"
               @click="toggleShowPassword"
             />
             <EyeSlashIcon
               v-else
-              class="text-slate-500 h-5 w-5 absolute right-0 mr-2 cursor-pointer"
+              class="absolute right-0 mr-2 h-5 w-5 cursor-pointer text-slate-500"
               @click="toggleShowPassword"
             />
           </div>
 
-          <div class="text-sm font-medium text-right">
+          <div class="text-right text-base font-medium">
             <span
-              class="cursor-pointer text-brandeis-blue hover:text-brandeis-blue-500"
-              >Olvidaste la constraseña?
+              class="cursor-pointer text-primary transition-colors hover:text-primary-500"
+              >¿Olvidaste la constraseña?
             </span>
           </div>
 
           <div class="space-y-3 pt-2">
             <RouterLink
               :to="{ name: ROUTES_NAME.HOME }"
-              class="px-3 py-2 text-sm tracking-wider text-white text-center font-semibold rounded-lg block w-full border bg-brandeis-blue hover:shadow-sm hover:bg-brandeis-blue-500 focus:outline-none focus:ring-2 focus:ring-brandeis-blue focus:ring-offset-2"
+              class="btn btn-primary block"
             >
               Entrar
             </RouterLink>
