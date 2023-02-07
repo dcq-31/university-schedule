@@ -6,59 +6,66 @@ import { CalendarDaysIcon } from "@heroicons/vue/24/outline";
 
 <template>
   <div class="p-2">
-    <main>
+    <main class="container mx-auto space-y-6">
+      <!-- Teacher Information Section -->
       <div class="p-3">
         <div>
-          <img src="/teacher.svg" alt="teacher" class="h-full w-60 mx-auto" />
+          <img src="/teacher.svg" alt="teacher" class="mx-auto h-full w-60" />
         </div>
-        <div>
-          <div class="text-xl text-slate-700 font-semibold mt-2">
+        <div class="mt-4">
+          <div class="text-2xl font-semibold text-slate-700">
             ¿Eres profesor?
           </div>
-          <div class="text-slate-500 mt-1">
+          <div class="mt-2 text-base text-slate-500">
             Ingresa tu cuenta de usuario para tener acceso a la administración
             de nuestro sitio.
           </div>
 
           <RouterLink
             :to="{ name: ROUTES_NAME.LOGIN }"
-            class="px-3 py-2 text-sm text-brandeis-blue text-center font-semibold tracking-wider rounded-lg block w-fit mt-2 border-none ring-2 ring-brandeis-blue"
+            class="btn btn-primary-outline mt-4 block w-fit text-sm"
           >
             Inicia sesión
           </RouterLink>
         </div>
       </div>
+      <!-- / Teacher Information Section -->
 
-      <div class="px-2 mt-5">
-        <div class="text-2xl text-center font-semibold text-slate-700">
+      <!-- Tools Section -->
+      <div class="px-2">
+        <div class="text-center text-3xl font-semibold text-slate-700">
           Herramientas
         </div>
 
-        <div class="mt-3 text-center">
-          <RouterLink :to="{ name: ROUTES_NAME.CALENDAR }" class="group">
-            <div class="p-2">
-              <div
-                class="p-4 w-fit mx-auto rounded-full group-hover:bg-brandeis-blue-500"
-              >
-                <CalendarDaysIcon
-                  class="text-brandeis-blue h-20 w-20 group-hover:text-white"
-                />
-              </div>
-              <div>
-                <div
-                  class="text-slate-700 text-xl mt-2 font-semibold group-hover:text-brandeis-blue"
-                >
-                  Horario de Clases
-                </div>
-                <div class="text-slate-500 mt-1">
-                  ¿No sabes que clases tocan hoy o cuando tienes exámen? Revisa
-                  nuestro calendario.
-                </div>
-              </div>
+        <div class="mt-4 space-y-3">
+          <div class="group p-2 text-center">
+            <div
+              class="mx-auto w-fit rounded-full bg-primary-500 p-6 shadow-xl"
+            >
+              <CalendarDaysIcon class="h-12 w-12 text-white" />
             </div>
-          </RouterLink>
+            <div>
+              <div
+                class="mt-2 text-xl font-medium text-slate-700 transition-colors group-hover:text-primary-500"
+              >
+                Horario de Clases
+              </div>
+              <div class="mt-1 text-slate-500">
+                ¿No sabes que clases tocan hoy o cuando tienes exámen? Revisa
+                nuestro calendario y entérate de las asignaturas que darás en
+                toda la semana, días feriados y más.
+              </div>
+              <RouterLink
+                :to="{ name: ROUTES_NAME.CALENDAR }"
+                class="btn btn-primary mx-auto mt-2 block w-fit text-sm"
+              >
+                Ver Horario
+              </RouterLink>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- / Tools Section -->
     </main>
   </div>
 </template>
