@@ -1,8 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import CalendarWeek from "../components/calendar/CalendarWeek.vue";
+</script>
 <template>
   <div>
-    <main>
-      <div class="text-center text-xl sm:text-3xl">Calendar View</div>
+    <main class="container mx-auto">
+      <div class="mx-auto max-w-xl py-5 px-2">
+        <CalendarWeek />
+      </div>
     </main>
   </div>
 </template>
