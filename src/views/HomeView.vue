@@ -1,71 +1,45 @@
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
 import { ROUTES_NAME } from "../router/names";
-import { CalendarDaysIcon } from "@heroicons/vue/24/outline";
+import CalendarWeek from "../components/calendar/CalendarWeek.vue";
 </script>
 
 <template>
-  <div class="p-2">
+  <div class="py-3 px-1">
     <main class="container mx-auto space-y-6">
+      <!-- Hero Section -->
+      <div class="pt-5 pb-2 px-4 text-center max-w-lg mx-auto">
+        <div class="text-4xl  tracking-normal font-bold text-slate-800 leading-snug">
+          Bienvenido al Horario de la FIE
+          <span>&#9889</span>
+        </div>
+         <p class="mt-3 text-lg px-2 text-gray-500">Revisa y prepárate para las clases que tienes pronto en nuestra facultad. </p>
+        
+      </div>
+
       <!-- Teacher Information Section -->
       <div class="p-3">
-        <div>
-          <img src="/teacher.svg" alt="teacher" class="mx-auto h-full w-60" />
-        </div>
-        <div class="mt-4">
-          <div class="text-2xl font-semibold text-slate-700">
+        <div class="shadow-md p-3 rounded-md border max-w-md">
+          <div class="text-xl font-semibold text-slate-700">
             ¿Eres profesor?
           </div>
           <div class="mt-2 text-base text-slate-500">
             Ingresa tu cuenta de usuario para tener acceso a la administración
             de nuestro sitio.
           </div>
-
-          <RouterLink
-            :to="{ name: ROUTES_NAME.LOGIN }"
-            class="btn btn-primary-outline mt-4 block w-fit text-sm"
-          >
-            Inicia sesión
-          </RouterLink>
-        </div>
-      </div>
-      <!-- / Teacher Information Section -->
-
-      <!-- Tools Section -->
-      <div class="px-2">
-        <div class="text-center text-3xl font-semibold text-slate-700">
-          Herramientas
-        </div>
-
-        <div class="mt-4 space-y-3">
-          <div class="group p-2 text-center">
-            <div
-              class="mx-auto w-fit rounded-full bg-primary-500 p-6 shadow-xl"
+           <RouterLink
+              :to="{ name: ROUTES_NAME.LOGIN }"
+              class="cursor-pointer mt-3 block font-medium text-primary transition-colors hover:text-primary-500"
+              >Inicia Sesión</RouterLink
             >
-              <CalendarDaysIcon class="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <div
-                class="mt-2 text-xl font-medium text-slate-700 transition-colors group-hover:text-primary-500"
-              >
-                Horario de Clases
-              </div>
-              <div class="mt-1 text-slate-500">
-                ¿No sabes que clases tocan hoy o cuando tienes exámen? Revisa
-                nuestro calendario y entérate de las asignaturas que darás en
-                toda la semana, días feriados y más.
-              </div>
-              <RouterLink
-                :to="{ name: ROUTES_NAME.CALENDAR }"
-                class="btn btn-primary mx-auto mt-2 block w-fit text-sm"
-              >
-                Ver Horario
-              </RouterLink>
-            </div>
-          </div>
         </div>
       </div>
-      <!-- / Tools Section -->
+
+      <!-- Calendar Section -->
+      <div class="mx-auto max-w-xl py-5 px-2">
+        <CalendarWeek />
+      </div>
+
     </main>
   </div>
 </template>
