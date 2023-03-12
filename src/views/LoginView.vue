@@ -18,12 +18,14 @@ const toggleShowPassword = () => {
 </script>
 <template>
   <div class="flex min-h-full items-center justify-center p-2">
-    <main class="w-full min-w-max max-w-md p-5">
+    <main
+      class="w-full max-w-sm p-5 sm:rounded-md sm:border sm:border-gray-100 sm:shadow-xl"
+    >
       <div>
         <img
           src="/login-bg.svg"
           alt="Teacher adding tasks"
-          class="mx-auto h-52 sm:h-56"
+          class="mx-auto h-52 min-w-max sm:h-56"
         />
       </div>
 
@@ -38,7 +40,7 @@ const toggleShowPassword = () => {
             <input
               type="text"
               placeholder="Usuario"
-              class="form-input w-full"
+              class="form-input w-full text-sm placeholder:text-sm"
             />
           </div>
 
@@ -49,7 +51,7 @@ const toggleShowPassword = () => {
             <input
               :type="passwordType"
               placeholder="Constraseña"
-              class="form-input w-full"
+              class="form-input w-full text-sm placeholder:text-sm"
             />
             <EyeIcon
               v-if="showPassword"
@@ -63,10 +65,10 @@ const toggleShowPassword = () => {
             />
           </div>
 
-          <div class="text-right text-base font-medium">
+          <div class="text-right font-medium">
             <span
-              class="cursor-pointer text-primary transition-colors hover:text-primary-500"
-              >¿Olvidaste la constraseña?
+              class="cursor-pointer text-sm tracking-wide text-primary transition-colors hover:text-primary-500"
+              >¿Olvidaste tu constraseña?
             </span>
           </div>
 
@@ -77,6 +79,15 @@ const toggleShowPassword = () => {
             >
               Entrar
             </RouterLink>
+          </div>
+
+          <div class="text-center text-sm tracking-wide text-slate-500">
+            ¿No eres administrador? Revisa
+            <RouterLink
+              :to="{ name: ROUTES_NAME.HOME }"
+              class="cursor-pointer font-medium text-primary transition-colors hover:text-primary-500"
+              >nuestros servicios</RouterLink
+            >
           </div>
         </form>
       </div>
